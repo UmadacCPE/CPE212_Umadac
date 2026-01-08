@@ -1,0 +1,12 @@
+- name: web server setup (install MariaDB)
+  hosts: web_servers
+  gather_facts: yes
+
+  tasks:
+    - name: Install MariaDB
+      ansible.builtin.package:
+        name:
+          - mariadb-server
+          - mariadb-client
+        state: present
+      become: true
