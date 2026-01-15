@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install apache and php on RedHat
+    yum:
+      name:
+        - httpd
+        - php
+      state: latest
+      update_cache: yes
+
+  - name: Start and enable Apache service
+    systemd:
+      name: httpd
+      state: started
+      enabled: yes
