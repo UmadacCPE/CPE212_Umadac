@@ -1,0 +1,7 @@
+---
+# tasks file for add_PHP_CentOS
+- name: add PHP support for apache on CentOS
+  dnf:
+    name: php
+    state: latest
+  when: ansible_distribution == "CentOS"

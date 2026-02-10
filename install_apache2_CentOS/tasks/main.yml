@@ -1,0 +1,7 @@
+---
+# tasks file for install_apache2_CentOS
+- name: install apache2 package on CentOS
+  dnf:
+    name: httpd
+    state: latest
+  when: ansible_distribution == "CentOS"

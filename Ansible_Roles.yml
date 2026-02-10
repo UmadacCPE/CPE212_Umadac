@@ -1,0 +1,11 @@
+- name: Assignment 6.1 Ansible Roles
+  hosts: all
+  become: yes
+  
+  roles:
+    - update_repository_Ubuntu
+    - install_apache2_Ubuntu
+    - add_PHP_Ubuntu
+    - update_repository_CentOS
+    - install_apache2_CentOS
+    - add_PHP_CentOS

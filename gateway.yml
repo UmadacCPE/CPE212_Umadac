@@ -1,0 +1,7 @@
+- name: Quiz 5.1
+  hosts: web_servers
+  become: yes
+  roles:
+    - ins_nginx
+    - ins_redis-server
+    - ins_ufw
