@@ -1,0 +1,29 @@
+---
+
+- hosts: web_servers
+  become: yes
+  tasks:
+
+    - name: Create directory for new group
+      file:
+        path:  /home/christian/new_group_directory
+        state: directory
+        owner: root
+        group: newgroup
+        mode: 0070
+
+    - name: Create directory for root user
+      file:
+        path:  /home/christian/root_user_directory
+        state: directory
+        owner: root
+        group: root
+        mode: 0700
+
+    - name: Create directory for owner
+      file:
+        path:  /home/christian/owner_directory
+        state: directory
+        owner: newuser
+        group: newuser
+        mode: 0700
